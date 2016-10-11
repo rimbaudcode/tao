@@ -1,9 +1,9 @@
 module Main (main) where
 
-import qualified Data.Text.Lazy.IO  as I
-import           Prelude
+import           Data.Text.Lazy.IO  (putStr)
+import           Prelude            hiding (putStr)
 import           Tao.Section.Number (generateSectionNumber)
 import           Tao.Section.Text   (getSectionText)
 
 main :: IO ()
-main = I.putStr =<< getSectionText =<< generateSectionNumber
+main = putStr =<< getSectionText =<< generateSectionNumber
