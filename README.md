@@ -1,6 +1,6 @@
 # tao
 
-`tao` is a command line tool that prints a randomly chosen section of the Tao-Te-Ching.
+`tao` is a command line tool that prints a section of the Tao-Te-Ching.
 
 ## Usage
 Simply call the tool from the CLI:
