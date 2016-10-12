@@ -1,6 +1,6 @@
 module Tao.Section.Number
   ( SectionNumber
-  , generateSectionNumber
+  , getSectionNumber
   , toSectionNumber
   , toInt
   ) where
@@ -13,18 +13,16 @@ data SectionNumber = SectionNumber !Int
 instance Show SectionNumber where
   show (SectionNumber int) = show int
 
-generateSectionNumber :: IO SectionNumber
-generateSectionNumber = SectionNumber <$> randomRIO (minSectionNumber, maxSectionNumber)
+getSectionNumber :: IO SectionNumber
+getSectionNumber = SectionNumber <$> randomRIO (minSectionNumber, maxSectionNumber)
 
 toSectionNumber :: Int -> Maybe SectionNumber
 toSectionNumber int
   | int >= minSectionNumber && int <= maxSectionNumber = Just $ SectionNumber int
   | otherwise                                          = Nothing
 
-maxSectionNumber :: Int
+maxSectionNumber, minSectionNumber :: Int
 maxSectionNumber = 81
-
-minSectionNumber :: Int
 minSectionNumber = 1
 
 toInt                     :: SectionNumber -> Int
