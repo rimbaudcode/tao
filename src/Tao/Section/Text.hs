@@ -3,16 +3,16 @@ module Tao.Section.Text
   ) where
 
 import           Data.Text.Lazy        (Text)
-import qualified Data.Text.Lazy.IO     as I
+import           Data.Text.Lazy.IO     (readFile)
 import           Paths_tao             (getDataFileName)
-import           Prelude
+import           Prelude               hiding (readFile)
 import           System.FilePath.Posix ((<.>), (</>))
 import           Tao.Section.Number    (SectionNumber)
 
 type SectionText = Text
 
 getSectionText     :: SectionNumber -> IO SectionText
-getSectionText num = I.readFile =<< getDataFileName (mkSectionFilePath num)
+getSectionText num = readFile =<< getDataFileName (mkSectionFilePath num)
 
 mkSectionFilePath     :: SectionNumber -> FilePath
 mkSectionFilePath num = "data" </> show num <.> "tao"
