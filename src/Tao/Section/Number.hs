@@ -1,3 +1,5 @@
+{-# LANGUAGE ApplicativeDo #-}
+
 module Tao.Section.Number
   ( SectionNumber
   , getSectionNumber
@@ -5,8 +7,9 @@ module Tao.Section.Number
   , toInt
   ) where
 
-import           Prelude
-import           System.Random (randomRIO)
+import Prelude       (IO, Int, Maybe (..), Show, otherwise, show, ($), (&&),
+                      (<$>), (<=), (>=))
+import System.Random (randomRIO)
 
 data SectionNumber = SectionNumber !Int
 

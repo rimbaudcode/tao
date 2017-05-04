@@ -2,7 +2,7 @@ module Utils.Numeric
   ( isInteger
   ) where
 
-import           Prelude
+import Prelude (Bool (..), Integer, String, String, reads)
 
 isInteger :: String -> Bool
 isInteger s =
