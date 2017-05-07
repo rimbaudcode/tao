@@ -1,5 +1,3 @@
-{-# LANGUAGE ApplicativeDo #-}
-
 module Tao.Section.Number
   ( SectionNumber
   , getSectionNumber

@@ -1,6 +1,4 @@
-{-# LANGUAGE ApplicativeDo #-}
 
-module Tao.Section.Text
   ( getSectionText
   ) where
 
