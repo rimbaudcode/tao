@@ -16,7 +16,6 @@ data-files:          data/*.tao
 
 library
   hs-source-dirs:      src
-  ghc-options:         -Wall
   exposed-modules:     Tao.Section.Number
                      , Tao.Section.Text
                      , Utils.Numeric
@@ -26,6 +25,28 @@ library
                      , text >= 1.2 && < 1.3
   default-language:    Haskell2010
   other-modules:       Paths_tao
+  ghc-options:       -fdefer-type-errors
+                     -Wall
+                     -fforce-recomp
+                     -fobject-code
+                     -fprof-auto
+                     -funbox-strict-fields
+                     -fwarn-implicit-prelude
+                     -fwarn-incomplete-patterns
+                     -fwarn-incomplete-record-updates
+                     -fwarn-incomplete-uni-patterns
+                     -fwarn-missing-signatures
+                     -fwarn-monomorphism-restriction
+                     -fwarn-name-shadowing
+                     -fwarn-orphans
+                     -fwarn-overlapping-patterns
+                     -fwarn-tabs
+                     -fwarn-unused-do-bind
+                     -fwarn-unused-imports
+                     -j4
+                     -O2
+                     -fexcess-precision
+                     -optc-O2
 
 executable tao
   hs-source-dirs:      app
@@ -41,7 +62,31 @@ executable tao
                      , Tao.Section.Number
                      , Tao.Section.Text
                      , Utils.Numeric
-  ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
+  ghc-options:       -fdefer-type-errors
+                     -Wall
+                     -fforce-recomp
+                     -fobject-code
+                     -fprof-auto
+                     -funbox-strict-fields
+                     -fwarn-implicit-prelude
+                     -fwarn-incomplete-patterns
+                     -fwarn-incomplete-record-updates
+                     -fwarn-incomplete-uni-patterns
+                     -fwarn-missing-signatures
+                     -fwarn-monomorphism-restriction
+                     -fwarn-name-shadowing
+                     -fwarn-orphans
+                     -fwarn-overlapping-patterns
+                     -fwarn-tabs
+                     -fwarn-unused-do-bind
+                     -fwarn-unused-imports
+                     -j4
+                     -rtsopts
+                     -threaded
+                     -with-rtsopts=-N
+                     -O2
+                     -fexcess-precision
+                     -optc-O2
 
 test-suite tao-test
   type:                exitcode-stdio-1.0
